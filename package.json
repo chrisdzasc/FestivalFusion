@@ -1,0 +1,28 @@
+{
+  "name": "festivalmusica_inicio",
+  "version": "1.0.0",
+  "description": "Proyecto con Gulp, SASS y HTML",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch src/scss:build/css",
+    "tarea" : "gulp primerTarea"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisdzasc/FestivalFusion.git"
+  },
+  "keywords": [
+    "SASS",
+    "Gulp"
+  ],
+  "author": "Christian Uriel Diaz Ascencio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrisdzasc/FestivalFusion/issues"
+  },
+  "homepage": "https://github.com/chrisdzasc/FestivalFusion#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "sass": "^1.71.1"
+  }
+}
