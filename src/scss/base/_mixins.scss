@@ -1,0 +1,29 @@
+@use 'variables' as v;
+
+// Media query para telefonos
+@mixin telefono{
+    @media (min-width: v.$telefono){
+        @content;
+    }
+}
+
+// Media query para tablets
+@mixin tablet{
+    @media (min-width: v.$tablet){
+        @content;
+    }
+}
+
+// Media query para Comnputadoras de escritorio
+@mixin desktop{
+    @media (min-width: v.$desktop){
+        @content;
+    }
+}
+
+// Media query para Comnputadoras de escritorio más grande
+@mixin desktopXL{
+    @media (min-width: v.$desktopXL){
+        @content;
+    }
+}

@@ -1,2 +1,4 @@
-@forward 'variables';
-@forward 'normalize';
+@forward 'variables'; // Las variables son lo primero que se declara para que se puedan utilizarlos en los demás archivos.
+@forward 'mixins';
+@forward 'normalize'; // Es el reset
+@forward 'globales'; // Los globales

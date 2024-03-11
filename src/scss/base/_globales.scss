@@ -1,0 +1,44 @@
+@use 'variables' as v;
+
+html{
+    font-size: 62.5%; // 1rem = 10 pixeles.
+    box-sizing: border-box; 
+}
+*,
+*::before,
+*::after{
+    box-sizing: inherit; // El padding no nos va a presentar ningún problema.
+}
+body{
+    font-family: v.$fuente_principal; // Del archivo de variables, le estamos asignando la fuente principal que asignamos a esa variable.
+    font-size: 1.6rem; // 1.6rem = 16 pixeles.
+}
+
+p{
+    font-size: 2rem;
+    color: v.$negro; // Del archivo de variables, le estamos asignando el color negro.
+}
+
+.contenedor{ // Contenedor
+    width: 95%; // El contenedor tome el 95% de la pantalla.
+    max-width: 120rem; // Con un máximo de 1200 pixeles.
+    margin: 0 auto; // Lo centramos horizontalmente
+}
+
+a{
+    text-decoration: none; // Le quitamos el subrayado a todos los enlaces.   
+}
+
+h1, h2, h3{
+    margin: 0 0 5rem 0; // 0 arriba, 0 derecha, 5 pixeles abajo, 0 izquierda.
+}
+
+h1{
+    font-size: 4rem; // Tamaño de 40 pixeles.
+}
+h2{
+    font-size: 3.6rem; // Tamaño de 36 pixeles
+}
+h3{
+    font-size: 3rem; // Tamaño de 30 pixeles.
+}

@@ -1,0 +1,55 @@
+@use '../base/variables' as v; // Importamos del archivo de variables.
+@use '../base/mixins' as m; // Importamos del archivo de mixins
+
+.header{
+    background-color: v.$verde; // Le ponemos fondo de color que tiene asignado verde en el archivo de variables
+    
+    // Anidacion
+    h1{
+        color: v.$blanco; // Le asignamos al titulo el color de la varible que tenemos en el archivo de variables
+        text-align: center; // El titulo va a estar centrado horizontalmente.
+
+        // Media Query para h1
+        @include m.tablet {
+            margin: 0; // Le quitamos el margin que tenia anteriormente.
+        }
+    }
+
+    .contenido-header{
+        padding: 2rem; 
+        // Media Query para el contenido-header
+        @include m.tablet {
+            display: flex; // display flexbox
+            justify-content: space-between; // De esta forma ya va a estar un contenido en el lado izquierdo y otro en el derecho
+            align-items: center; // Queda centrado verticalmente
+        }
+    }
+}
+
+.navegacion-principal{
+
+    // Media query para la nevegación principal
+    @include m.tablet {
+        display: flex; // Para que los enlaces se coloquen en un mismo renglon.
+        gap: 2rem; // Añadir la separación automaticamente
+    }
+
+    a{
+        display: block; // Para que los enlaces se coloquen de arriba hacia abajo.
+        text-align: center; // Para que los enlaces estén centrados horizontalmente.
+        color: v.$blanco; // Le asignamos el color de la variable que tenemos en el archivo de variables a los enlaces.
+        font-size: 2.4rem; // Tamaño de 24 pixeles  
+        margin-bottom: 1rem; // Margen en la parate de abajo de cada enlace.
+        
+        // Media querya para los enlaces
+        @include m.tablet {
+            margin: 0; // Le quitamos el margin-bottom que tenia
+        }
+        
+        &:hover{ // Con el & le quitamos el espacio cuando se compile.
+        color: v.$amarillo; // Cuando pasemos el ratón encima, se aplicará el color asignado de la variable amarillo.
+        }
+    }
+
+}
+
