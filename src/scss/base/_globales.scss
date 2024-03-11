@@ -17,6 +17,7 @@ body{
 p{
     font-size: 2rem;
     color: v.$negro; // Del archivo de variables, le estamos asignando el color negro.
+    line-height: 1.5; // Interlineado
 }
 
 .contenedor{ // Contenedor
@@ -41,4 +42,9 @@ h2{
 }
 h3{
     font-size: 3rem; // Tamaño de 30 pixeles.
+}
+
+img{
+    max-width: 100%; // Un máximo de 100%
+    display: block; // Se va a ajustar la imagen 
 }

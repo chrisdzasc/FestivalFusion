@@ -1,0 +1,50 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.video{
+    position: relative;
+    max-height: 70rem; // Máximo de altura de 70 pixeles.
+    min-height: 50rem; // Minimo de altura de 50 pixeles.
+    overflow: hidden; // Para que no se vea la parte inferior del video y fluya.
+
+    .overlay{
+        position: absolute;
+        height: 100%; // Toma el 100% de altura
+        width: 100%; // Toma el 100% de ancho
+        background: rgb(163, 3, 255);
+        background: linear-gradient(270deg, rgba(165, 3, 255, 0.5) 0%, rgba(255, 0, 110, 0.3) 100%);
+        display: flex;
+        flex-direction: column; // Nos va a ayudar para que se pueda alinear verticalmente el texto.
+        justify-content: center; // Lo alinea verticalmente el texto.
+    }
+
+    video{ // Estoy modificando solamente al video y no a la clase.
+        width: auto; // Ancho automatico
+        display: block; // Para que tome todo el espacio.
+        
+        // Media Query para tablets
+        @include m.desktop {
+            width: 100%; // El video va a tomar el 100% de pantalla.
+        }
+    }
+}
+
+.contenido-video{
+    z-index: 1; // Cómo se va a mostrar, cómo se va acomodar este elemento, pero como si fueran hojas.
+
+    h2{
+        color: v.$blanco; // Toma el valor de la variable de blanco.
+        font-size: 7rem; // Tamaño de 70 pixeles.
+        margin: 0; // Quitarle el margen que heredó.
+    }
+
+    p{
+        background-color: v.$rosa; // Le agrega un fondo de color rosa.
+        display: inline-block; // Solamente va a tomar el espacio que requiere.
+        padding: 1rem 2rem; // Le va a dar más espacio hacia adentro.
+        color: v.$blanco; // Toma el valor de la variable de blanco.
+        font-weight: 700; // Lo negritas de la letra.
+        font-size: 2.4rem; // Tamaño de 24 pixeles
+        margin: 0; // Le quita el margen qe heredo
+    }
+}

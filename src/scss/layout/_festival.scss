@@ -1,0 +1,29 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.sobre-festival{
+    padding: 5rem 0 5rem 0; // Creando separacion arriba y abajo
+    @include m.tablet {
+        @include m.grid(2, 5rem);
+    }
+}
+
+.contenido-festival{
+    display: flex; // Para alineas el contenido vertical
+    flex-direction: column; // Los elementos se van a colocar verticalmente
+    justify-content: center; // Se centrar el contenido verticalmente
+
+    margin-top: 5rem;
+    @include m.tablet {
+        margin-top: 0;
+    }
+    
+    h2{
+        margin-bottom: 2rem; // Le ponemos el margen de abajo de 2 pixeles
+    }
+
+    .fecha{
+        color: v.$rosa; // Toma el valor de la variable de rosa.
+        font-weight: 700; // Hace el texto negritas
+    }
+}

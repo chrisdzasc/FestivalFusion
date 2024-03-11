@@ -25,6 +25,41 @@
         </div>
     </header>
 
+    <div class="video">
+        <div class="overlay">
+            <div class="contenedor contenido-video">
+                <h2>Festival Fusion</h2>
+                <p>Agosto 2024, Guadalajara, México</p>
+            </div>
+        </div>
+
+        <video autoplay muted loop> <!--autoplay, muted, loop hace que se reproduzca automatico el video en silencio y que nunca termine -->
+            <source src="video/concierto.mp4" type="video/mp4"> <!-- mp4 tiene que ser el primero porque es el de mayor soporte  -->
+            <source src="video/concierto.ogg" type="video/ogg"> <!-- Si el primero no es soportado, busca el segundo -->
+            <source src="video/concierto.webm" type="video/webm"> <!-- Si el primero y el segundo no es soportado, busca el tercero -->
+        </video> <!-- Lo va a tratar como video -->
+
+    </div> <!-- Contenedor que va a estar encima del video --> 
+
+    <section class="contenedor sobre-festival">
+        
+        <!-- Div para la imagen -->
+        <div class="imagen">
+            <img src="img/imagen_vocalista.jpg" alt="Imagen Vocalista Festival">
+        </div>
+
+        <!-- Div para la informacion-->
+        <div class="contenido-festival">
+            <h2>Festival Fusion</h2>
+            <p class="fecha">Agosto 2024, Guadalajara, México</p>
+            <p>¡Prepárate para sumergirte en una experiencia única donde la música, la cultura y la diversión se fusionan en un solo evento! 
+                El Festival Fusion regresa este agosto de 2024 a la vibrante ciudad de Guadalajara, México, para celebrar una vez más la 
+                diversidad y la creatividad en el mundo de la música.</p>
+        </div>
+    </section>
+
+
+
 
 </body>
 </html>

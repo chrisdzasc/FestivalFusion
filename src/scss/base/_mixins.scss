@@ -27,3 +27,10 @@
         @content;
     }
 }
+
+// Mixin para que se pueda colocar los elementos entre filas y columnas
+@mixin grid($columnas, $espaciado){
+    display: grid; // Va a dividir el espacio entre filas y columnas
+    grid-template-columns: repeat($columnas, 1fr); // Crear las columnas necesarias de una fracción.
+    gap: $espaciado; // La separación entre columnas.
+}
