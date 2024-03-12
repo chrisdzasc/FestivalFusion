@@ -4,6 +4,11 @@ const { src, dest, watch, parallel} = require('gulp'); //Entonces, src sirve par
 const sass = require("gulp-sass")(require('sass')); // Manda a llamar la función SASS
 const plumber = require('gulp-plumber'); // Instalamos la dependencia, extraemos la variable y la podemos utilizar
 
+// Imagenes
+const cache = require('gulp-cache');
+const imagemin = require('gulp-imagemin');
+const avif = require('gulp-avif');
+
 function css(done){
 
     // Identificar el archivo SASS
@@ -16,6 +21,19 @@ function css(done){
         .pipe(dest('build/css')) // Lo guarda en el disco duro
 
     done(); // Callback que avisa a gulp cuando llegamos al final de la ejecución.
+}
+
+function imagenes(done){
+
+    const opciones = {
+        optimizationLevel: 3
+    }
+
+    src('src/img/**/*.{png,PNG,jpg,JPG}') // Busca recursivamente en todos los archivos y carpetas de la carpeta img con los formatos especificados
+        .pipe( cache( imagemin(opciones) ) )
+        .pipe( dest('build/img') )
+
+    done();
 }
 
 async function versionWebp(done) {
@@ -42,5 +60,6 @@ function dev(done){ // Va a ser una funciona que vamos a ejecutar algunas funcio
 }
 
 exports.css = css; // Aqui mandamos llamar a la función CSS.
+exports.imagenes = imagenes;
 exports.versionWebp = versionWebp;
-exports.dev = parallel(versionWebp, dev); // Aqui mandamos llamar a la función dev.
+exports.dev = parallel(imagenes, versionWebp, dev); // Aqui mandamos llamar a la función dev.
