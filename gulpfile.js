@@ -52,14 +52,23 @@ async function versionWebp(done) {
     done(); // Callback que avisa a gulp cuando llegamos al final de la ejecución del script
 }
 
+function javascript(done){ // Va a ser una funcion que haga caso a las cosas de javascript
+    src('src/js/**/*.js') // A todos los archivos con terminacion .js en la carperta src/js/
+        .pipe(dest('build/js')); // Los va a guardar en el build en su propia carpeta js
+
+    done();
+}
+
 function dev(done){ // Va a ser una funciona que vamos a ejecutar algunas funciones con el watch
 
-    watch('src/scss/**/*.scss', css) // Cuando cambie la hoja de estilo, manda a llamar la función css
+    watch('src/scss/**/*.scss', css); // Cuando cambie la hoja de estilo, manda a llamar la función css
+    watch('src/js/**/*.js', javascript); // Cuando cambie la hoja de estilo, manda a llamar la función css
 
     done()
 }
 
 exports.css = css; // Aqui mandamos llamar a la función CSS.
+exports.js = javascript
 exports.imagenes = imagenes;
 exports.versionWebp = versionWebp;
-exports.dev = parallel(imagenes, versionWebp, dev); // Aqui mandamos llamar a la función dev.
+exports.dev = parallel(imagenes, versionWebp, javascript, dev); // Aqui mandamos llamar a la función dev.
