@@ -1,0 +1,90 @@
+// Importando variables y mixins
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+// Estilos para el contenedor de la seccion "lineup"
+.lineup{
+    background-color: v.$rosa; // Agregando color rosa de fondo
+    padding: 5rem 0; // Añadiendo relleno de 50 pixeles arriba y abajo, 0 a los lados
+
+    h3, p {
+        text-align: center; // Alinear los h3 y parrafos en el div .lineup en el centro
+        color: v.$blanco; // Definiendo el color blanco en el texto
+    }
+
+    .dia{
+        text-transform: uppercase; // Transfroma el texto en mayúsculas.
+        margin: 5rem 0; // Añadiendo margen inferior y superior de 50 pixeles a los elementos en la clase de "dia"
+    }
+}
+
+// Estilos para el contenedor del escenario
+.escenario-contenedor{
+    @include m.tablet{ // Aplicando mixin para media query de tablet
+        @include m.grid(2, 5rem); // Aplicando mixin grid con 2 coulmnas y un espacio de 50 pixeles entre ellos
+    }
+
+    p{
+        color: v.$negro; // Definiendo el color negro en el texto.
+    }
+}
+
+// Estilos para los escenarios
+.escenario{
+    padding-top: 2rem; // Añadiendo relleno en la parte superior de 20 pixeles a los elementos con clase "escenario"
+
+    p{
+        &:after{ // Seleccioando los párrafos y añadiendo un seudoelemento después de ellos.
+            content: ''; // Agregando contenido al seudoelemento
+            display: block; // Mostrando el seudoelemento como un bloque
+            width: 20rem; // Definiendo el ancho como 200 pixeles
+            height: 10rem; // Definiendo la altura a 100 pixeles
+            background-size: 15rem; //Estableciendo el tamaño de fondo como 150 pixeles.
+            background-repeat: no-repeat; // Evitando que el fondo se repita
+            background-position: center center; // Posicionando el fondo en el centro tanto horizonatal como vertical.
+            margin: 2rem auto 0 auto; // Va a quedar centrado horizontalmente
+            
+        }
+    }
+}
+
+// Estilos para el escenario de música EDM
+.edm .nombre-escenario:after{
+    background-image: url(../img/icono_edm.png); // Definiendo la imagen de fondo para el escenario EDM
+}
+
+// Estilos para el escenario de música Rock
+.rock .nombre-escenario:after{
+    background-image: url(../img/icono_rock.png); // Definiendo la imagen de fondo para el escenario rock
+}
+
+// Estilos para el calendario
+.calendario{
+    @include m.resetear-lista;
+    li{
+        padding: 2.5rem; // Agregando relleno de 25 pixeles en todas las direcciones
+        font-weight: 700; // Tiene modo negritas las letras
+
+        span{
+            font-weight: 400; // No tiene modo negritas las letras
+        }
+    }
+}
+
+// Estilos para aplicar un fondo amarillo
+.bg-amarillo{
+    background-color: v.$amarillo;
+
+    li:nth-child(odd){ // Aqui indicamos cual li vamos a seleccionar, en este caso con "odd" son todos los impares
+        background-color: darken(v.$amarillo, 15%); // Oscurece más el color que le indiquemos
+    }
+}
+
+// Estilos para aplicar un fondo verde
+.bg-verde{
+    background-color: v.$verde;
+
+    li:nth-child(odd){ // Aqui indicamos cual li vamos a seleccionar, en este caso con "odd" son todos los impares
+        background-color: darken(v.$verde, 10%); // Oscurece más el color que le indiquemos
+    }
+}

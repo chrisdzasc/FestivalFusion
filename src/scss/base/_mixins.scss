@@ -34,3 +34,10 @@
     grid-template-columns: repeat($columnas, 1fr); // Crear las columnas necesarias de una fracción.
     gap: $espaciado; // La separación entre columnas.
 }
+
+// Mixin para resetear las listas
+@mixin resetear-lista{
+    margin: 0; // No va a tener ningun margen
+    padding: 0; // No va a tener relleno
+    list-style: none; // Le quita las viñetas
+}
