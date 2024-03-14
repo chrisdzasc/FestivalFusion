@@ -12,6 +12,10 @@ html{
 body{
     font-family: v.$fuente_principal; // Del archivo de variables, le estamos asignando la fuente principal que asignamos a esa variable.
     font-size: 1.6rem; // 1.6rem = 16 pixeles.
+
+    &.fijar-body{
+        overflow: hidden; // No poder dar scroll
+    }
 }
 
 p{

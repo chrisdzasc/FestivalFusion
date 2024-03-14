@@ -1,0 +1,68 @@
+@use '../base/variables' as v; // Importando variables desde el archivo '../base/variables.scss y renombrandolas como 'v'
+@use '../base/mixins' as m; // Importando mixins desde el archivo '../base/mixins.scss y renombrandolas como 'm'
+
+// Estilos para la sección de galeria
+.galeria{
+    padding: 5rem 0; // Agrega relleno de 50 pixeles arriba y abajo, 0 a los lados
+    
+    h3{
+        text-align: center; // Centra el titulo horizontalmente
+    }
+}
+
+// Estilos para la lista de imagenes
+.galeria-imagenes{
+    @include m.resetear-lista; // Incluye el mixin resetear-lista para eliminar los estilos predeterminados de la lista
+
+    @include m.grid(2, 2rem); // Incluye el mixin grid con 2 columnas y 20 pixeles de espacio entre cada columna
+
+    @include m.telefono { // Media Query para dispositivos de telefono
+        @include m.grid(3, 2rem); // Incluye el mixin grid con 3 columnas y 20 pixeles de espacio entre cada columna
+    }
+
+    @include m.tablet { // Media Query para dispositivos de tablet
+        @include m.grid(4, 2rem) // Incluye el mixin grid con 4 columnas y 20 pixeles de espacio entre cada columna
+    }
+
+    @include m.desktop { // Media Query para dispositivos de desktop
+        @include m.grid(6, 2rem) // Incluye el mixin grid con 6 columnas y 20 pixeles de espacio entre cada columna
+    }
+}
+
+// Estilos para la clase .overlay
+.overlay{
+    position: fixed; // Posición fija para mantener el overlay en su lugar incluso cuando la página se desplaza
+    top: 0; // Alinear el borde superior del overlay con el borde superior de la ventana del navegador
+    left: 0; // Alinear el borde izquierdo del overlay con el borde superior de la ventana del navegador
+    right: 0; // Alinear el borde derecho del overlay con el borde superior de la ventana del navegador
+    bottom: 0; // Alinear el borde inferior del overlay con el borde superior de la ventana del navegador
+
+    width: 100%; // Establecer el ancho del overlay al 100% del ancho de la ventana del navegador
+    height: 100%; // Establecer la altura del overlay al 100% de la altura de la ventana del navegador
+
+    display: grid; // Para que se pueda organizar con columnas y filas
+    place-items: center; // Centrar vertical y horizontalmente el contenido dentro del overlay
+
+    background-color: rgba(0, 0, 0, .5); // Establecer el color de fondo del overlay como negro con una opacidad del 50%
+
+    // Estilos para elementos picture dentro del overlay
+    picture{
+        display: block; // Hacer que el elemento picture se muestre como un bloque para que se ocupe todo el ancho disponible
+        max-width: 80rem; // Establecer un ancho máximo de 800 pixeles para las imágenes dentro del overlay
+    }
+}
+
+.btn-cerrar{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: v.$blanco;
+    color: v.$negro;
+    display: grid;
+    place-content: center;
+    font-weight: 700;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
