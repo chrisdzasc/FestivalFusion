@@ -1,19 +1,20 @@
-@use '../base/variables' as v;
-@use '../base/mixins' as m;
+@use '../base/variables' as v; // Importa el archivo de variables y lo renombra como 'v'
+@use '../base/mixins' as m; // Importa el archivo de mixins y lo renombra como 'm'
 
 .boletos{
-    padding: 5rem 0;
+    padding: 5rem 0; // Establece un relleno de 5rem arriba y abajo, y 0 en los lados
 
     h3{
-        text-align: center;
-        color: v.$blanco;
-        margin-bottom: 2rem
+        text-align: center; // Centra el texto.
+        color: v.$blanco; // Establece el color del texto utilizando la variable $blanco definida en el archivo de variables
+        margin-bottom: 2rem // Añade un margen inferior de 20 pixeles
     }
 
     .contenedor-boletos{
 
-        @include m.tablet {
-            @include m.grid(2, 5rem);
+        // Media Query para tablet
+        @include m.tablet {  
+            @include m.grid(2, 5rem); // Utiliza el mixin m.grid para estableces una cuadrícula de 2 columnas con un espacio de 50 pixeles entre ellas
         }
     }
 }
@@ -21,46 +22,48 @@
 .pase{
 
     .nombre-pase{
-        text-align: center;
-        color: v.$blanco;
-        font-size: 2.8rem;
+        text-align: center; // Centra el texto
+        color: v.$blanco; // Establece el color del texto utilizando la variable $blanco definida en el archivo de variables
+        font-size: 2.8rem; // Establece el tamaño de la fuente a 28 pixeles
     }
 
     &-header,
     &-footer{
-        padding: .5rem;
+        padding: .5rem; // Añade un relleno de 5 pixeles alrededor del encabezado y el pie de página
         p{
-            text-align: center;
-            color: v.$blanco;
-            margin: 0;
+            text-align: center; // Centra el texto
+            color: v.$blanco; // Establece el color del texto utilizando la variable $blanco definida en el archivo de variables
+            margin: 0; // Establece el margen a 0 para eliminar cualquier margen predeterminado
         }
     }
 
     &-header{
-        background-color: v.$rosa;
-        text-transform: uppercase;
-        font-size: 1.6rem;
+        background-color: v.$rosa; // Establece el color del texto utilizando la variable $rosa definida en el archivo de variables
+        text-transform: uppercase; // Transforma el texto a mayúsculas
+        font-size: 1.6rem; // Establece el tamaño de la fuente a 16 pixeles
 
     }
 
     &-body{
-        background-color: v.$blanco;
+        background-color: v.$blanco; // Establece el color del texto utilizando la variable $blanco definida en el archivo de variables
         ul{
-            @include m.resetear-lista;
+            @include m.resetear-lista; // Utiliza el mixin m.resetear-lista para restablecer los estilos de la lista.
+
             li,
             :nth-child(odd){
-                background-color: v.$blanco;
-                padding: 1rem;
-                border-bottom: 1px solid #e1e1e1;
+                background-color: v.$blanco; // Establece el color de fondo utilizando la variable $blanco definida en el archivo de variables.
+                padding: 1rem; // Añade un relleno de 10 pixeles alrededor de los elementos de la lista.
+                border-bottom: 1px solid #e1e1e1; // Añade un borde inferior de 1px sólido con color gris.
             }
         }
     }
 
     &-footer{
-        background-color: v.$morado;
+        background-color: v.$morado; // Establece el color de fondo utilizando la variable $morado definida en el archivo de variables.
+
         p{
-            font-size: 2.4rem;
-            font-weight: 700;
+            font-size: 2.4rem; // Establece el tamaño de la fuente a 24 pixeles
+            font-weight: 700; // Establece el grosor de la fuente a negrita
         }
     }
 }

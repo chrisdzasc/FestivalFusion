@@ -1,12 +1,11 @@
-@use '../base/variables' as v;
+@use '../base/variables' as v; // Importa el archivo de bariables y lo renombra como 'v'
 
 .site-footer{
-    
-    background-color: v.$rosa;
-    padding: 1rem;
-    p{
-        margin: 0;
-        text-align: center;
-        color: v.$blanco;
+    background-color: v.$rosa; // Establece el color de fondo utilizando la variable $rosa definida en el archivo de variables
+    padding: 1rem; // Añade un relleno de 10 pixeles alrededor del contenido del pie de página
+    p{ // Aplica estilos a los párrafos dentro del pie de página
+        margin: 0; // Establece el margen a 0 para eliminar cualquier margen predeterminado
+        text-align: center; // Centra el texto dentro del pie de página
+        color: v.$blanco; // Establece el color del texto utilizando la variable $blanco definida en el archivo de variables
     }
 }

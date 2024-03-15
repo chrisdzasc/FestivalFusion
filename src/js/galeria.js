@@ -7,7 +7,43 @@ document.addEventListener('DOMContentLoaded', function(){
 
 // Declaración de la función iniciarApp()
 function iniciarApp(){
-    crearGaleria(); // Llama a la funcion crearGaleria()
+    navegacionFija(); // Llama a la función navegaciónFija()
+    crearGaleria(); // Llama a la función crearGaleria()
+    scrollNav(); // Llama a la función scrollNav()
+}
+
+// Definición de la función navegacionFija()
+function navegacionFija(){
+    // Seleccionar la barra de navegacion y el elemento 'sobre-festival
+    const barra = document.querySelector('.header'); // Selecciona la barra de navegación
+    const sobreFestival = document.querySelector('.sobre-festival'); // Selecciona el elemento 'sobre-festival'
+    const body = document.querySelector('body'); // Selecciona el body
+
+    // Evento de desplazamiento de la ventana
+    window.addEventListener('scroll', function(){
+        if(sobreFestival.getBoundingClientRect().top < 0){ // Verifica si el elemento 'sobre-festival' está arriba de la pantalla
+            barra.classList.add('fijo'); // Si 'sobre-festival' está arriba de la pantalla, agrega la clase 'fijo' a la barra de navegación
+            body.classList.add('body-scroll'); // Tambien agrega la clase 'body-scroll' al elemento body
+        }else{
+            barra.classList.remove('fijo'); // Si 'sobre-festival' no está arriba de la pantalla, remover clase 'fijo' de la barra de navegacion
+            body.classList.remove('body-scroll'); // Tambien remover la clase 'body-scroll' del body
+        }
+    });
+}
+
+// Definición de la función scrollNav()
+function scrollNav(){
+    const enlaces = document.querySelectorAll('.navegacion-principal a'); // Seleccionar todos los enlaces contenido en la parte de 'navegacion.principal
+    
+    enlaces.forEach( enlace =>{ // Iterar sobre cada enlace
+        enlace.addEventListener('click', function(e){ // Agregar un evento de clic a cada enlace
+            e.preventDefault(); // Prevenir el comportamiento predeterminado del enlace (evitar que se produzca una redirección)
+
+            const seccionScroll = e.target.attributes.href.value; // Obtener la URL del enlace al que se le hizo clic
+            const seccion = document.querySelector(seccionScroll); // Seleccionar la sección correspondiente en funcion de la URL del enlace
+            seccion.scrollIntoView({behavior: "smooth"}); // Desplazar suavemente la página hacia la sección seleccionada
+        });
+    });
 }
 
 // Definicion de la función crearGaleria()

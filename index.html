@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Festival Fusion</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8"> <!-- Define el conjunto de caracteres utilizado en la página como UTF-8 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Establece el modo de emulación del navegador para IE-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Establece la escala inicial y el tamaño de la ventana del dispositovo -->
+    <title>Festival Fusion</title> <!-- Establece el titulo de la página -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Prefetch para la conexión a Google Fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Prefetch para la conexion a Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet"> <!-- Enlace al archivo CSS de la fuente de Google Fonts-->
 
-    <link rel="stylesheet" href="build/css/app.css">
+    <link rel="stylesheet" href="build/css/app.css"> <!-- Enlace al archivo CSS principal de la aplición-->
 </head>
+
 <body>
 
-    <header class="header"> 
-        <div class="contenedor contenido-header">
-            <h1>Festival Fusion</h1>
+    <header class="header"> <!-- Inicio del encabeza de la página -->
+        <div class="contenedor contenido-header"> <!-- Contenedor del encabezado-->
+            <h1>Festival Fusion</h1> <!-- Titulo principal del encabezado -->
 
-            <nav class="navegacion-principal">
-                <a href="#">Line Up</a>
-                <a href="#">Galeria</a>
-                <a href="#">Boletos</a>
+            <nav class="navegacion-principal"> <!-- Navegación principal del encabezado -->
+                <a href="#lineup">Line Up</a> <!-- Enlace a la sección "Line Up" de la página-->
+                <a href="#galeria">Galeria</a> <!-- Enlace a la sección "Galeria" de la página-->
+                <a href="#boletos">Boletos</a> <!-- Enlace a la sección "Boletos" de la página-->
             </nav>
         </div>
-    </header>
+    </header> <!-- Fin del encabezado de la página -->
 
-    <div class="video">
-        <div class="overlay">
-            <div class="contenedor contenido-video">
-                <h2>Festival Fusion</h2>
-                <p>Agosto 2024, Guadalajara, México</p>
+    <div class="video"> <!-- Inicio del contenedor de video-->
+        <div class="overlay"> <!-- Capa superpuesta sobre el video -->
+            <div class="contenedor contenido-video"> <!-- Contenedor para el contenido superpuesto -->
+                <h2>Festival Fusion</h2> <!-- Titulo-->
+                <p>Agosto 2024, Guadalajara, México</p> <!-- Fecha y lugar -->
             </div>
         </div>
 
@@ -41,36 +42,37 @@
 
     </div> <!-- Contenedor que va a estar encima del video --> 
 
-    <section class="contenedor sobre-festival">
-        
+    <section class="contenedor sobre-festival"> <!-- Sección que contiene información sobre el festival -->
         <!-- Div para la imagen -->
-        <div class="imagen">
-            <picture>
-                <source srcset="build/img/imagen_vocalista.webp" type="image/webp" >
-                <img loading="lazy" src="build/img/imagen_vocalista.jpg" alt="Imagen de vocalista">
+        <div class="imagen"> <!-- Div para mostrar la imagen del festival -->
+            <picture> <!-- Elemento para manejar diferentes formatos de imagen -->
+                <source srcset="build/img/imagen_vocalista.webp" type="image/webp" > <!-- Primer formato porque es el que pesa menos -->
+                <img loading="lazy" src="build/img/imagen_vocalista.jpg" alt="Imagen de vocalista"> <!-- Segundo formato-->
             </picture>
         </div>
 
         <!-- Div para la informacion-->
-        <div class="contenido-festival">
-            <h2>Festival Fusion</h2>
-            <p class="fecha">Agosto 2024, Guadalajara, México</p>
+        <div class="contenido-festival"> <!-- Div para mostrar la informacion del festival -->
+            <h2>Festival Fusion</h2> <!-- Titulo del festival -->
+            <p class="fecha">Agosto 2024, Guadalajara, México</p> <!-- Fecha y ubicacion del festival-->
             <p>¡Prepárate para sumergirte en una experiencia única donde la música, la cultura y la diversión se fusionan en un solo evento! 
                 El Festival Fusion regresa este agosto de 2024 a la vibrante ciudad de Guadalajara, México, para celebrar una vez más la 
-                diversidad y la creatividad en el mundo de la música.</p>
+                diversidad y la creatividad en el mundo de la música.</p> <!-- Descripcion del festival -->
         </div>
-    </section>
+    </section> <!-- Fin de la sección sobre el festival -->
 
-    <section class="lineup">
+    <section id="lineup" class="lineup"> <!-- Sección "Line Up" con el id "lineup" y la clase "lineup"-->
 
-        <h3>Line UP</h3>
-        <p class="dia">Viernes 23</p>
+        <h3>Line UP</h3> <!-- Titulo de la sección "Line up"-->
+        <p class="dia">Viernes 23</p> <!-- Indicacion del dia -->
 
-        <div class="escenario-contenedor contenedor">
-            <div class="escenario rock bg-amarillo">
-                <p class="nombre-escenario">Escenario Rock</p>
+        <!-- Contenedor de escenarios-->
+        <div class="escenario-contenedor contenedor"> <!-- Contenedor para los escenarios -->
+            <!-- Escenario Rock -->
+            <div class="escenario rock bg-amarillo"> <!-- Escenario rock y con la clase "rock" y un fondo amarilo -->
+                <p class="nombre-escenario">Escenario Rock</p> <!-- Nombre del escenario -->
 
-                <ul class="calendario">
+                <ul class="calendario"> <!-- Lista de los artistas -->
                     <li>
                         24:00 | <span>Metallica</span>
                     </li>
@@ -92,10 +94,11 @@
                 </ul>
             </div> <!-- Aqui termina escenario Rock -->
 
-            <div class="escenario edm bg-verde">
-                <p class="nombre-escenario">Escenario EDM</p>
+            <!-- Escenario EDM-->
+            <div class="escenario edm bg-verde"> <!-- Escenario EDm y con la clase "edm" y un fondo verde-->
+                <p class="nombre-escenario">Escenario EDM</p> <!-- Nombre del escenario -->
 
-                <ul class="calendario">
+                <ul class="calendario"> <!-- Lista de los artistas -->
 
                     <li>
                         24:00 | <span>Deadmau5</span>
@@ -121,13 +124,13 @@
             </div> <!-- Aqui termina escenario EDM -->
         </div> <!-- Aqui termina escenario-contenedor-->
 
-        <p class="dia">Sabado 24</p>
+        <p class="dia">Sabado 24</p> <!-- Indicacion del dia -->
 
-        <div class="escenario-contenedor contenedor">
-            <div class="escenario rock bg-verde">
-                <p class="nombre-escenario">Escenario Rock</p>
+        <div class="escenario-contenedor contenedor"> <!-- Contenedor para los escenarios -->
+            <div class="escenario rock bg-verde">  <!-- Escenario rock y con la clase "rock" y un fondo verde -->
+                <p class="nombre-escenario">Escenario Rock</p> <!-- Nombre del escenario -->
 
-                <ul class="calendario">
+                <ul class="calendario"> <!-- Lista de los artistas -->
                     <li>
                         24:00 | <span>Red Hot Chili Peppers</span>
                     </li>
@@ -150,10 +153,10 @@
                 </ul>
             </div> <!-- Aqui termina escenario Rock -->
 
-            <div class="escenario edm bg-amarillo">
-                <p class="nombre-escenario">Escenario EDM</p>
+            <div class="escenario edm bg-amarillo"> <!-- Escenario EDm y con la clase "edm" y un fondo amarillo-->
+                <p class="nombre-escenario">Escenario EDM</p> <!-- Nombre del escenario -->
 
-                <ul class="calendario">
+                <ul class="calendario"> <!-- Lista de los artistas -->
 
                     <li>
                         24:00 | <span>Paul Van Dyk</span>
@@ -178,43 +181,47 @@
             </div> <!-- Aqui termina escenario EDM -->
         </div> <!-- Aqui termina escenario-contenedor-->
 
+    </section> <!-- Fin de la sección "Line Up"-->
+
+    <section id="galeria" class="galeria contenedor"> <!-- Sección de la galeria con el id "galeria" y la clase "galeria contenedor"-->
+        <h3>Galería</h3> <!-- Titulo de la sección de la galeria -->
+
+        <ul class="galeria-imagenes"></ul> <!-- Lista que contendrá las imagenes de la galería -->
     </section>
 
-    <section class="galeria contenedor">
-        <h3>Galería</h3>
+    <section id="boletos" class="boletos bg-verde"> <!-- Sección de "Boletos" con el id "boletos" y la clase "boletos bg-verde"-->
+        <h3>Boletos</h3> <!-- Título de la sección de "boletos" -->
 
-        <ul class="galeria-imagenes"></ul>
-    </section>
+        <div class="contenedor contenedor-boletos"> <!-- Contenedor principal de los pases -->
 
-    <section class="boletos bg-verde">
-        <h3>Boletos</h3>
-
-        <div class="contenedor contenedor-boletos">
-            <div class="basico pase">
-                <p class="nombre-pase">Pase 1 Día</p>
-                <header class="pase-header">
-                    <p>Incluye</p>
+            <!-- Primer tipo de pase: Pase 1 Día -->
+            <div class="basico pase"> <!-- Div para el pase básico -->
+                <p class="nombre-pase">Pase 1 Día</p> <!-- Nombre del pase -->
+                <header class="pase-header"> <!-- Encabezadp del pase -->
+                    <p>Incluye</p> <!-- Descripcion de lo que incluye el pase -->
                 </header>
 
-                <div class="pase-body">
-                    <ul>
+                <div class="pase-body"> <!-- Cuerpo del pase -->
+                    <ul> <!-- Lista de elementos incluidos en el pase -->
                         <li>Acceso a ambos escenarios</li>
                         <li>Comida y bebida</li>
                     </ul>
                 </div>
 
-                <footer class="pase-footer">
-                    <p>$100</p>
+                <footer class="pase-footer"> <!-- Pie del pase -->
+                    <p>$100</p> <!-- Precio del pase -->
                 </footer>
-            </div>
-            <div class="premium pase">
-                <p class="nombre-pase">Pase 2 Días</p>
-                <header class="pase-header">
-                    <p>Incluye</p>
+            </div> <!-- Fin del pase básico -->
+
+            <!-- Segundo tipo de pase: Pase 2 Días-->
+            <div class="premium pase"> <!-- Div para el pase premium -->
+                <p class="nombre-pase">Pase 2 Días</p> <!-- Nombre del pase -->
+                <header class="pase-header"> <!-- Encabezado del pase -->
+                    <p>Incluye</p> <!-- Descripcion de lo que incluye el pase -->
                 </header>
 
-                <div class="pase-body">
-                    <ul>
+                <div class="pase-body"> <!-- Cuerpo del pase -->
+                    <ul> <!-- Lista de elementos incluidos en el pase -->
                         <li>Acceso a ambos escenarios</li>
                         <li>Comida y bebida</li>
                         <li>Camisa del evento</li>
@@ -222,18 +229,18 @@
                     </ul>
                 </div>
 
-                <footer class="pase-footer">
-                    <p>$180</p>
+                <footer class="pase-footer"> <!-- Pie del pase -->
+                    <p>$180</p> <!-- Precio del pase -->
                 </footer>
-            </div>
+            </div> <!-- Fin del pase Premium -->
         </div>
-    </section>
+    </section> <!-- Fin de la sección de "Boletos" -->
 
-    <footer class="site-footer">
-        <p>Festival Fusion. Todos los derechos reservados</p>
-    </footer>
+    <footer class="site-footer"> <!-- Inicio del pie de pagina con la clase "site-footer" -->
+        <p>Festival Fusion. Todos los derechos reservados</p> <!-- Contenido del pie de página -->
+    </footer> <!-- Fin del pie de página -->
 
-    <script src="build/js/galeria.js"></script>
+    <script src="build/js/galeria.js"></script> <!-- Se carga el script "galeria.js" desde la ruta "build/js/galeria.js" -->
 
-</body>
-</html>
+</body> <!-- Cierre del cuerpo del documento HTML -->
+</html> <!-- Cierre del documento HTML -->

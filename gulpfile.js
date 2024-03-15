@@ -3,11 +3,18 @@ const { src, dest, watch, parallel} = require('gulp'); //Entonces, src sirve par
 // CSS
 const sass = require("gulp-sass")(require('sass')); // Manda a llamar la función SASS
 const plumber = require('gulp-plumber'); // Instalamos la dependencia, extraemos la variable y la podemos utilizar
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano'); 
+const postcss = require('gulp-postcss');
+const sourcemaps = require('gulp-sourcemaps');
 
 // Imagenes
 const cache = require('gulp-cache');
 const imagemin = require('gulp-imagemin');
 const avif = require('gulp-avif');
+
+// JavaScript
+const terser = require('gulp-terser-js');
 
 function css(done){
 
@@ -16,8 +23,11 @@ function css(done){
     // Almacenarla en el disco duro
 
     src('src/scss/**/*.scss') //Toma la ubicación de donde está el archivo
+        .pipe(sourcemaps.init())
         .pipe( plumber())
         .pipe( sass() ) // Le aplica SASS
+        .pipe( postcss([autoprefixer(), cssnano() ]))
+        .pipe(sourcemaps.write('.'))
         .pipe(dest('build/css')) // Lo guarda en el disco duro
 
     done(); // Callback que avisa a gulp cuando llegamos al final de la ejecución.
@@ -54,6 +64,9 @@ async function versionWebp(done) {
 
 function javascript(done){ // Va a ser una funcion que haga caso a las cosas de javascript
     src('src/js/**/*.js') // A todos los archivos con terminacion .js en la carperta src/js/
+        .pipe(sourcemaps.init())
+        .pipe( terser() ) // Va a mejorar el código de JavaScript
+        .pipe(sourcemaps.write('.'))
         .pipe(dest('build/js')); // Los va a guardar en el build en su propia carpeta js
 
     done();

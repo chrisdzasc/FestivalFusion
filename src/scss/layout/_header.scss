@@ -3,13 +3,26 @@
 
 .header{
     background-color: v.$verde; // Le ponemos fondo de color que tiene asignado verde en el archivo de variables
-    
+
+    // Media query para tablet
+    @include m.tablet {
+        &.fijo{ // Estalblece estilos adicionales cuando la clase fijo está presente en el elemento header
+            left: 0; // Establece la posicion izquierda en 0
+            top: 0; // Establece la posicion superior en 0
+            position: fixed; // Establece la posicion fija para que el elemento permanezca en la parte superior de la pantalla mientra se desplaza
+            width: 100%; // Establece el ancho al 100% para que ocupe todo el ancho de la pantalla
+            .box { // Establece estilos para el elemento .box dentro del header
+                box-shadow: 0.1rem 0.2rem 0.3rem #333; // Agrega una sombra al elemento utilizando los valores especificados
+            }
+        }
+    }
+  
     // Anidacion
     h1{
         color: v.$blanco; // Le asignamos al titulo el color de la varible que tenemos en el archivo de variables
         text-align: center; // El titulo va a estar centrado horizontalmente.
 
-        // Media Query para h1
+        // Media Query para tablet
         @include m.tablet {
             margin: 0; // Le quitamos el margin que tenia anteriormente.
         }

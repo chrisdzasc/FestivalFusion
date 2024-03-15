@@ -16,6 +16,10 @@ body{
     &.fijar-body{
         overflow: hidden; // No poder dar scroll
     }
+
+    &.body-scroll{
+        padding-top: 8.6rem;
+    }
 }
 
 p{
